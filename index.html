@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djula.AI - Transformez WhatsApp en Boutique Intelligente</title>
+    <meta name="description" content="Vendez, encaissez et gérez vos commandes sans effort directement via WhatsApp, grâce à notre assistant IA.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/mockup.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+    <!-- Police moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configuration Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'djula-orange': '#FF8A2B',
+                        'djula-blue': '#1F2937',
+                        'djula-gray': '#6B7280',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 py-4 px-6 shadow-sm">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="assets/images/logo.webp" alt="Djula.AI Logo" class="h-8">
+            </a>
+
+            <!-- Menu principal - Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-djula-blue hover:text-djula-orange transition-colors">Accueil</a>
+                <a href="#fonctionnalites" class="text-djula-blue hover:text-djula-orange transition-colors">Fonctionnalités</a>
+                <a href="#temoignages" class="text-djula-blue hover:text-djula-orange transition-colors">Témoignages</a>
+                <a href="#contact" class="text-djula-blue hover:text-djula-orange transition-colors">Contact</a>
+            </div>
+
+            <!-- Bouton Beta -->
+            <a href="#" class="hidden md:flex items-center bg-djula-orange text-white px-6 py-2 rounded-full hover:bg-djula-orange/90 transition-all transform hover:scale-105">
+                <span>Rejoindre la Bêta</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+            </a>
+
+            <!-- Menu mobile -->
+            <button class="md:hidden text-djula-blue" id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Menu mobile panel -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-4 py-3 space-y-4">
+                <a href="#" class="block text-djula-blue hover:text-djula-orange">Accueil</a>
+                <a href="#fonctionnalites" class="block text-djula-blue hover:text-djula-orange">Fonctionnalités</a>
+                <a href="#temoignages" class="block text-djula-blue hover:text-djula-orange">Témoignages</a>
+                <a href="#contact" class="block text-djula-blue hover:text-djula-orange">Contact</a>
+                <a href="#" class="block bg-djula-orange text-white px-6 py-2 rounded-full text-center">
+                    Rejoindre la Bêta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <!-- Colonne de gauche - Texte -->
+            <div class="space-y-8">
+                <!-- Badge Beta -->
+                <div class="inline-block animate-fade-in">
+                    <span class="bg-djula-blue/10 text-djula-blue px-4 py-2 rounded-full text-sm font-medium">
+                        ✨ Accès Bêta Exclusif
+                    </span>
+                </div>
+
+                <!-- Titre principal -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up">
+                    <span class="text-djula-orange">Transformez WhatsApp</span>
+                    <br>
+                    <span class="text-djula-blue">en une Boutique Intelligente</span>
+                </h1>
+
+                <!-- Sous-titre -->
+                <p class="text-djula-gray text-xl max-w-xl animate-fade-in delay-200">
+                    Vendez, encaissez et gérez vos commandes sans effort directement via WhatsApp, grâce à notre assistant IA.
+                </p>
+
+                <!-- CTA Section -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in delay-300">
+                    <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-medium transition-all duration-300 bg-gradient-to-r from-djula-orange to-djula-blue hover:scale-105 hover:shadow-lg">
+                        🚀 Rejoindre la Bêta
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    
+                    <p class="text-djula-gray font-medium animate-pulse">
+                        🔥 Seulement 100 places disponibles
+                    </p>
+                </div>
+            </div>
+
+            <div class="whatsapp-container">
+                <!-- Header WhatsApp Pro -->
+                <div class="wa-header">
+                    <div class="wa-header-content">
+                        <img src="assets/images/aicha-profile.webp" alt="Aïcha" class="wa-profile">
+                        <div class="wa-business-info">
+                            <div class="wa-name">Sneakers CI by Aïcha</div>
+                            <div class="wa-verified">
+                                <span class="verified-badge">✓</span>
+                                Commerce vérifié
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Chat -->
+                <div class="wa-chat">
+                    <div class="wa-time">01:02</div>
+            
+                    <div class="msg ai-msg">
+                        <div class="msg-content">
+                            <div class="ai-badge">Djula</div>
+                            Bienvenue chez Sneakers CI ! 👟
+                            Comment puis-je vous aider ?
+                        </div>
+                        <span class="msg-time">✓✓</span>
+                    </div>
+            
+                    <div class="msg client-msg">
+                        <div class="msg-content">AF1 en 42 dispo ?</div>
+                        <span class="msg-time"></span>
+                    </div>
+            
+                    <div class="msg ai-msg product-msg">
+                        <div class="product-card">
+                            <img src="assets/images/airforce1.webp" alt="Nike AF1">
+                            <div class="product-details">
+                                <span class="product-price">35 000 FCFA</span>
+                                <button class="pay-btn">
+                                    Payer maintenant
+                                    <span class="btn-icon">→</span>
+                                </button>
+                            </div>
+                        </div>
+                        <span class="msg-time">✓✓</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    
+    <section class="py-32 px-6 bg-[#FAFAFA]">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="max-w-xl mb-20">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-red-50/60 rounded-full mb-6 border border-red-100">
+                        <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                        <span class="text-xs font-medium tracking-wide uppercase text-red-600">Problématique</span>
+                    </div>
+                    
+                    <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight">
+                        Les 3 freins qui vous font perdre des ventes sur WhatsApp
+                    </h2>
+                </div>
+        
+                <!-- Problems Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="insight-card">
+                        <div class="card-content">
+                            <div class="icon-container">
+                                <span class="emoji-icon">⏰</span>
+                            </div>
+                            
+                            <div class="metric-badge">
+                                <span class="metric-value">-40%</span>
+                                <span class="metric-label">de ventes</span>
+                            </div>
+        
+                            <h3 class="card-title">Réponses lentes</h3>
+                            
+                            <p class="card-description">
+                                Chaque minute de retard se transforme en client perdu et en vente manquée
+                            </p>
+                        </div>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="insight-card">
+                        <div class="card-content">
+                            <div class="icon-container">
+                                <span class="emoji-icon">📝</span>
+                            </div>
+                            
+                            <div class="metric-badge">
+                                <span class="metric-value">5h/j</span>
+                                <span class="metric-label">perdues</span>
+                            </div>
+        
+                            <h3 class="card-title">Suivi manuel</h3>
+                            
+                            <p class="card-description">
+                                La gestion manuelle des commandes devient rapidement ingérable
+                            </p>
+                        </div>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="insight-card">
+                        <div class="card-content">
+                            <div class="icon-container">
+                                <span class="emoji-icon">💸</span>
+                            </div>
+                            
+                            <div class="metric-badge">
+                                <span class="metric-value">60%</span>
+                                <span class="metric-label">d'abandon</span>
+                            </div>
+        
+                            <h3 class="card-title">Paiements compliqués</h3>
+                            
+                            <p class="card-description">
+                                Un processus de paiement confus qui fait fuir vos clients
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="py-32 px-6 bg-gradient-to-b from-white to-[#F8FAFC]">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header Section -->
+            <div class="flex flex-col items-center text-center mb-20">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50/60 rounded-full mb-6 border border-green-100">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                    <span class="text-xs font-medium tracking-wide uppercase text-green-600">Notre Solution</span>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight max-w-2xl mb-6">
+                    La Magie de <span class="text-gradient">Djula.AI</span>
+                </h2>
+                
+                <p class="text-gray-600 text-xl max-w-2xl">
+                    Une IA qui répond, vend et encaisse pour vous, 24h/24 et 7j/7
+                </p>
+            </div>
+    
+            <!-- Main Content -->
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Left: Features -->
+                <div class="space-y-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-content">
+                            <h3>Réponses Instantanées</h3>
+                            <p>Catalogue interactif et réponses automatiques intelligentes à vos clients</p>
+                            <div class="feature-metric">
+                                <span class="metric">+80%</span>
+                                <span class="label">de taux de réponse</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <div class="feature-content">
+                            <h3>Paiements Automatisés</h3>
+                            <p>Intégration Mobile Money pour des paiements sécurisés et instantanés</p>
+                            <div class="feature-metric">
+                                <span class="metric">-70%</span>
+                                <span class="label">d'abandon panier</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-content">
+                            <h3>Gestion Simplifiée</h3>
+                            <p>Suivi des commandes et gestion de l'inventaire en temps réel</p>
+                            <div class="feature-metric">
+                                <span class="metric">5h</span>
+                                <span class="label">économisées/jour</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- CTA Button -->
+                    <a href="#" class="cta-button">
+                        <span class="cta-icon">💡</span>
+                        <span class="cta-text">Testez gratuitement pendant 1 mois</span>
+                        <span class="cta-arrow">→</span>
+                    </a>
+                </div>
+    
+                <!-- Right: Animated Illustration -->
+                <div class="solution-demo">
+                    <div class="demo-phone">
+                        <div class="demo-screen">
+                            <div class="demo-chat">
+                                <div class="chat-message client">
+                                    Je veux ces baskets 👟
+                                </div>
+                                <div class="chat-message ai">
+                                    <div class="ai-badge">Djula</div>
+                                    Voici le lien de paiement sécurisé 🔒
+                                </div>
+                                <div class="payment-card">
+                                    <span class="payment-amount">35 000 FCFA</span>
+                                    <button class="pay-button">
+                                        Payer via Orange Money
+                                    </button>
+                                </div>
+                                <div class="success-animation">
+                                    <svg class="checkmark" viewBox="0 0 52 52">
+                                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                    </svg>
+                                    <span>Payé !</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-[#FAFAFA]">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-yellow-50/60 rounded-full mb-6 border border-yellow-100">
+                    <span class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></span>
+                    <span class="text-xs font-medium tracking-wide uppercase text-yellow-600">Témoignages</span>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight max-w-2xl mx-auto mb-6">
+                    Ils utilisent déjà un assistant IA
+                </h2>
+    
+                <!-- Rating -->
+                <div class="inline-flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm border border-gray-100">
+                    <div class="flex gap-1">
+                        ★★★★★
+                    </div>
+                    <span class="text-gray-900 font-semibold">4.8/5</span>
+                    <span class="text-gray-500 text-sm">sur 127 avis</span>
+                </div>
+            </div>
+    
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-header">
+                            <img src="assets/images/sarah-kenya.webp" alt="Sarah K." class="testimonial-avatar">
+                            <div>
+                                <h3 class="testimonial-name">Sarah Kamau</h3>
+                                <p class="testimonial-business">Fashion Store, Nairobi 🇰🇪</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">+127%</span>
+                                <span class="stat-label">ventes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4h</span>
+                                <span class="stat-label">gagnées/jour</span>
+                            </div>
+                        </div>
+    
+                        <blockquote>
+                            "L'assistant répond à mes clients même quand je dors. Mes ventes ont plus que doublé depuis que je l'utilise !"
+                        </blockquote>
+    
+                        <div class="proof-badge">
+                            <span class="proof-icon">✓</span>
+                            Utilisatrice vérifiée
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card featured">
+                    <div class="testimonial-content">
+                        <div class="testimonial-header">
+                            <img src="assets/images/james-uganda.webp" alt="James M." class="testimonial-avatar">
+                            <div>
+                                <h3 class="testimonial-name">James Mugisha</h3>
+                                <p class="testimonial-business">Sneakers Hub, Kampala 🇺🇬</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">+205%</span>
+                                <span class="stat-label">ventes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">3x</span>
+                                <span class="stat-label">clients</span>
+                            </div>
+                        </div>
+    
+                        <blockquote>
+                            "Incroyable ! Mon chiffre d'affaires a triplé et je peux enfin me concentrer sur le développement de mon business."
+                        </blockquote>
+    
+                        <div class="proof-badge featured">
+                            <span class="proof-icon">⭐</span>
+                            Top Vendeur 2024
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-header">
+                            <img src="assets/images/amina-tanzania.webp" alt="Amina H." class="testimonial-avatar">
+                            <div>
+                                <h3 class="testimonial-name">Amina Hassan</h3>
+                                <p class="testimonial-business">Style House, Dar es Salaam 🇹🇿</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">+94%</span>
+                                <span class="stat-label">ventes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">-70%</span>
+                                <span class="stat-label">temps admin</span>
+                            </div>
+                        </div>
+    
+                        <blockquote>
+                            "L'assistant gère parfaitement mes clients. Je peux enfin profiter de ma famille le soir !"
+                        </blockquote>
+    
+                        <div class="proof-badge">
+                            <span class="proof-icon">✓</span>
+                            Utilisatrice vérifiée
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-gradient-to-b from-[#FAFAFA] to-white">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-50/60 rounded-full mb-6 border border-purple-100">
+                    <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                    <span class="text-xs font-medium tracking-wide uppercase text-purple-600">Accès Exclusif</span>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight mb-6">
+                    Rejoignez la <span class="text-gradient">Révolution WhatsApp</span>
+                </h2>
+    
+                <!-- Timer Badge -->
+                <div class="inline-flex items-center gap-3 bg-red-50 text-red-600 px-4 py-2 rounded-full mb-8">
+                    <span class="countdown">97</span>
+                    <span class="font-medium">places restantes</span>
+                </div>
+            </div>
+    
+            <!-- Form Container -->
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <!-- Left: Form -->
+                <div class="signup-form-container">
+                    <form class="space-y-6">
+                        <div class="form-step active">
+                            <div class="form-field">
+                                <label for="business-name">Nom de l'entreprise</label>
+                                <input type="text" id="business-name" placeholder="ex: Sneakers Shop CI" required>
+                            </div>
+    
+                            <div class="form-field">
+                                <label for="whatsapp">Numéro WhatsApp Business</label>
+                                <div class="phone-input">
+                                    <span class="country-code">+225</span>
+                                    <input type="tel" id="whatsapp" placeholder="07 07 07 07 07" required>
+                                </div>
+                            </div>
+    
+                            <div class="form-field">
+                                <label for="business-type">Type de business</label>
+                                <select id="business-type" required>
+                                    <option value="" disabled selected>Sélectionnez votre secteur</option>
+                                    <option value="fashion">Mode & Vêtements</option>
+                                    <option value="shoes">Chaussures</option>
+                                    <option value="accessories">Accessoires</option>
+                                    <option value="beauty">Beauté & Cosmétiques</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+    
+                            <div class="form-field">
+                                <label for="city">Ville</label>
+                                <select id="city" required>
+                                    <option value="" disabled selected>Sélectionnez votre ville</option>
+                                    <option value="abidjan">Abidjan</option>
+                                    <option value="yamoussoukro">Yamoussoukro</option>
+                                    <option value="bouake">Bouaké</option>
+                                    <option value="other">Autre ville</option>
+                                </select>
+                            </div>
+    
+                            <button type="submit" class="submit-button">
+                                <span class="button-content">
+                                    <span class="button-icon">🔓</span>
+                                    <span class="button-text">Rejoindre la Bêta Exclusive</span>
+                                    <span class="button-arrow">→</span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Right: Benefits -->
+                <div class="benefits-container">
+                    <div class="benefits-card">
+                        <div class="benefits-header">
+                            <div class="access-badge">
+                                <span class="badge-icon">⭐</span>
+                                <span>Accès Prioritaire</span>
+                            </div>
+                            <div class="price">
+                                <span class="original">59 900 FCFA</span>
+                                <span class="offer">GRATUIT</span>
+                                <span class="period">pendant 1 mois</span>
+                            </div>
+                        </div>
+    
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <span class="check">✓</span>
+                                <span>Assistant IA illimité 24/7</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="check">✓</span>
+                                <span>Paiements Mobile Money automatisés</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="check">✓</span>
+                                <span>Dashboard & Analytics avancés</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="check">✓</span>
+                                <span>Support prioritaire WhatsApp</span>
+                            </div>
+                            <div class="benefit-item featured">
+                                <span class="gift">🎁</span>
+                                <span>Formation exclusive offerte</span>
+                                <span class="bonus-tag">BONUS</span>
+                            </div>
+                        </div>
+    
+                        <div class="security-badges">
+                            <div class="security-item">
+                                <span class="security-icon">🔒</span>
+                                <span>Paiement sécurisé</span>
+                            </div>
+                            <div class="security-item">
+                                <span class="security-icon">⚡</span>
+                                <span>Installation rapide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-900 pt-24 pb-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/images/djula-logo-white.svg" alt="Djula.AI" class="h-8">
+                        <span class="text-white font-semibold">Djula.AI</span>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm">
+                        Transformez votre WhatsApp en une boutique intelligente avec notre assistant IA.
+                    </p>
+    
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            <span class="text-gray-400 text-sm">Tous nos systèmes sont opérationnels</span>
+                        </div>
+                        <a href="#status" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
+                            <span>Statut du service</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Product Column -->
+                <div>
+                    <h3 class="text-white font-semibold mb-6">Produit</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#features" class="text-gray-400 hover:text-white transition-colors">Fonctionnalités</a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Tarification</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Témoignages</a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Company Column -->
+                <div>
+                    <h3 class="text-white font-semibold mb-6">Société</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors">À propos</a>
+                        </li>
+                        <li>
+                            <a href="#blog" class="text-gray-400 hover:text-white transition-colors">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#careers" class="text-gray-400 hover:text-white transition-colors">
+                                <span>Carrières</span>
+                                <span class="ml-2 text-xs bg-djula-orange text-white px-2 py-0.5 rounded-full">On recrute</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Connect Column -->
+                <div>
+                    <h3 class="text-white font-semibold mb-6">Nous suivre</h3>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-4 mb-8">
+                        <a href="#" class="social-link">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <!-- LinkedIn icon -->
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <!-- Twitter/X icon -->
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <!-- Instagram icon -->
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+    
+                    <!-- Newsletter -->
+                    <div class="newsletter-form">
+                        <h4 class="text-white text-sm font-medium mb-3">Newsletter</h4>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Recevez nos dernières actualités et offres
+                        </p>
+                        <form class="flex gap-2">
+                            <input 
+                                type="email" 
+                                placeholder="Votre email" 
+                                class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-djula-orange"
+                            >
+                            <button type="submit" class="newsletter-button">
+                                <span>→</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <!-- Copyright -->
+                    <div class="text-gray-400 text-sm">
+                        <span>© 2025 Djula.AI. Tous droits réservés.</span>
+                        <span class="mx-2">·</span>
+                        <span>Fait avec ♥️ à Abidjan, Côte d'Ivoire</span>
+                    </div>
+    
+                    <!-- Legal Links -->
+                    <div class="flex gap-6">
+                        <a href="#privacy" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            Confidentialité
+                        </a>
+                        <a href="#terms" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            CGU
+                        </a>
+                        <a href="#cookies" class="text-gray-400 hover:text-white text-sm transition-colors">
+                            Cookies
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <!-- ... (reste du body) ... -->
+     <script src="assets/js/animations.js"></script>
+</body>
+</html>

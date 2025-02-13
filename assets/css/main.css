@@ -1,0 +1,260 @@
+/* Styles de base */
+:root {
+    --djula-orange: #FF8A2B;
+    --djula-blue: #1F2937;
+    --djula-gray: #6B7280;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+/* Style de scrollbar personnalisé */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--djula-orange);
+    border-radius: 4px;
+}
+
+/* Utilitaires personnalisés */
+.text-balance {
+    text-wrap: balance;
+}
+
+/* Optimisations pour le chargement des images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Styles pour la section Hero */
+.hero {
+    min-height: 100vh;
+    padding: 120px 24px;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 138, 43, 0.05),
+        rgba(7, 94, 84, 0.05)
+    );
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 540px;
+}
+
+.beta-badge {
+    display: inline-block;
+    background: rgba(7, 94, 84, 0.1);
+    color: #075E54;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #FF8A2B, #FF6B00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-text p {
+    color: #6B7280;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.cta-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.cta-primary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #FF8A2B, #FF6B00);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.beta-spots {
+    color: #6B7280;
+    font-weight: 500;
+}
+
+.mockup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Effet de décoration derrière le mockup */
+.mockup-container::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 138, 43, 0.1),
+        rgba(7, 94, 84, 0.1)
+    );
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(60px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 48px;
+    }
+
+    .hero-text {
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mockup-container {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 80px 24px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .whatsapp-container {
+        transform: scale(0.9);
+    }
+}
+
+/* Ajustement du conteneur principal */
+section {
+    position: relative;
+    overflow: visible !important; /* Pour permettre le débordement du mockup */
+}
+
+/* Ajustement de la grille principale */
+.max-w-7xl {
+    margin-right: 0;
+    margin-left: auto;
+    padding-right: 8%;
+    transform: translateX(5%); /* Décalage subtil vers la droite */
+}
+
+/* Ajustement du mockup WhatsApp */
+.whatsapp-container {
+    transform: translateX(10%); /* Décalage plus prononcé pour le mockup */
+    position: relative;
+}
+
+/* Effet décoratif derrière le mockup */
+.whatsapp-container::before {
+    content: '';
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 138, 43, 0.08),
+        rgba(7, 94, 84, 0.08)
+    );
+    border-radius: 50%;
+    z-index: -1;
+    top: -20%;
+    left: -20%;
+    filter: blur(60px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .max-w-7xl {
+        margin: 0 auto;
+        padding-right: 24px;
+        transform: none;
+    }
+
+    .whatsapp-container {
+        transform: none;
+    }
+}
