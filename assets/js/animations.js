@@ -1,27 +1,37 @@
-// Gestion du menu mobile
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
+/* JavaScript for active state */
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuButton.addEventListener('click', function() {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        
-        if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('animate-fade-in');
-        } else {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('animate-fade-in');
-        }
+    
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
     });
 
-    // Fermer le menu mobile lors du clic sur un lien
-    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+    // Intersection Observer for sections
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                
+                // Update desktop nav
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
+
+                // Update mobile nav
+                mobileNavLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
+            }
         });
-    });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
 });
 
 // Animation du header au scroll

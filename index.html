@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Djula.AI - Transformez WhatsApp en Boutique Intelligente</title>
     <meta name="description" content="Vendez, encaissez et gérez vos commandes sans effort directement via WhatsApp, grâce à notre assistant IA.">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS -->
@@ -36,139 +36,172 @@
 </head>
 <body class="font-sans">
     <!-- Header -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 py-4 px-6 shadow-sm">
-        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+    <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center">
-                <img src="assets/images/logo.webp" alt="Djula.AI Logo" class="h-8">
+            <a href="#" class="group flex items-center gap-2 text-2xl font-bold">
+                <span class="bg-gradient-to-r from-djula-orange to-[#075E54] bg-clip-text text-transparent">
+                    Djula
+                </span>
+                <span class="text-gray-700 group-hover:text-gray-900 transition-colors">.ai</span>
             </a>
-
-            <!-- Menu principal - Desktop -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#" class="text-djula-blue hover:text-djula-orange transition-colors">Accueil</a>
-                <a href="#fonctionnalites" class="text-djula-blue hover:text-djula-orange transition-colors">Fonctionnalités</a>
-                <a href="#temoignages" class="text-djula-blue hover:text-djula-orange transition-colors">Témoignages</a>
-                <a href="#contact" class="text-djula-blue hover:text-djula-orange transition-colors">Contact</a>
+    
+            <!-- Navigation Desktop -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#hero" class="nav-link active">
+                    <span class="nav-dot"></span>
+                    Accueil
+                </a>
+                <a href="#features" class="nav-link">
+                    <span class="nav-dot"></span>
+                    Solution
+                </a>
+                <a href="#testimonials" class="nav-link">
+                    <span class="nav-dot"></span>
+                    Témoignages
+                </a>
+                <a href="#pricing" class="nav-link">
+                    <span class="nav-dot"></span>
+                    Tarifs
+                </a>
             </div>
-
-            <!-- Bouton Beta -->
-            <a href="#" class="hidden md:flex items-center bg-djula-orange text-white px-6 py-2 rounded-full hover:bg-djula-orange/90 transition-all transform hover:scale-105">
-                <span>Rejoindre la Bêta</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-            </a>
-
-            <!-- Menu mobile -->
-            <button class="md:hidden text-djula-blue" id="mobile-menu-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#" class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-djula-orange to-[#075E54] text-white font-medium shadow-lg shadow-orange-500/20 hover:shadow-orange-500/30 transition-all duration-300 hover:-translate-y-0.5">
+                    <span>Early Access</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors" id="mobile-menu-button" aria-label="Menu">
+                <svg class="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
         </nav>
-
-        <!-- Menu mobile panel -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-4 py-3 space-y-4">
-                <a href="#" class="block text-djula-blue hover:text-djula-orange">Accueil</a>
-                <a href="#fonctionnalites" class="block text-djula-blue hover:text-djula-orange">Fonctionnalités</a>
-                <a href="#temoignages" class="block text-djula-blue hover:text-djula-orange">Témoignages</a>
-                <a href="#contact" class="block text-djula-blue hover:text-djula-orange">Contact</a>
-                <a href="#" class="block bg-djula-orange text-white px-6 py-2 rounded-full text-center">
-                    Rejoindre la Bêta
+    
+        <!-- Mobile Menu Panel -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100" id="mobile-menu">
+            <nav class="flex flex-col p-6 space-y-4">
+                <a href="#hero" class="mobile-nav-link active">Accueil</a>
+                <a href="#features" class="mobile-nav-link">Solution</a>
+                <a href="#testimonials" class="mobile-nav-link">Témoignages</a>
+                <a href="#pricing" class="mobile-nav-link">Tarifs</a>
+                <a href="#" class="flex items-center justify-center gap-2 px-6 py-3 mt-4 rounded-full bg-gradient-to-r from-djula-orange to-[#075E54] text-white font-medium">
+                    <span>Early Access</span>
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
                 </a>
-            </div>
+            </nav>
         </div>
     </header>
-
-    <section class="pt-32 pb-20 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <!-- hero ---->
+    <section class="pt-32 pb-20 px-6 bg-gradient-to-b from-white to-gray-50/50">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <!-- Colonne de gauche - Texte -->
             <div class="space-y-8">
                 <!-- Badge Beta -->
-                <div class="inline-block animate-fade-in">
-                    <span class="bg-djula-blue/10 text-djula-blue px-4 py-2 rounded-full text-sm font-medium">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#075E54]/10 rounded-full border border-[#075E54]/20">
+                    <span class="w-1.5 h-1.5 bg-[#075E54] rounded-full animate-pulse"></span>
+                    <span class="text-xs font-medium tracking-wide text-[#075E54]">
                         ✨ Accès Bêta Exclusif
                     </span>
                 </div>
-
+    
                 <!-- Titre principal -->
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up">
-                    <span class="text-djula-orange">Transformez WhatsApp</span>
-                    <br>
-                    <span class="text-djula-blue">en une Boutique Intelligente</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                    <span class="text-gradient-primary block mb-2">Transformez WhatsApp</span>
+                    <span class="text-[#075E54]">en une Boutique Intelligente</span>
                 </h1>
-
+    
                 <!-- Sous-titre -->
-                <p class="text-djula-gray text-xl max-w-xl animate-fade-in delay-200">
+                <p class="text-gray-600 text-xl leading-relaxed">
                     Vendez, encaissez et gérez vos commandes sans effort directement via WhatsApp, grâce à notre assistant IA.
                 </p>
-
+    
                 <!-- CTA Section -->
-                <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in delay-300">
-                    <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-medium transition-all duration-300 bg-gradient-to-r from-djula-orange to-djula-blue hover:scale-105 hover:shadow-lg">
-                        🚀 Rejoindre la Bêta
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <a href="#" class="cta-button">
+                        <span class="cta-content">
+                            <span>🚀 Rejoindre la Bêta</span>
+                            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
                     </a>
                     
-                    <p class="text-djula-gray font-medium animate-pulse">
-                        🔥 Seulement 100 places disponibles
-                    </p>
-                </div>
-            </div>
-
-            <div class="whatsapp-container">
-                <!-- Header WhatsApp Pro -->
-                <div class="wa-header">
-                    <div class="wa-header-content">
-                        <img src="assets/images/aicha-profile.webp" alt="Aïcha" class="wa-profile">
-                        <div class="wa-business-info">
-                            <div class="wa-name">Sneakers CI by Aïcha</div>
-                            <div class="wa-verified">
-                                <span class="verified-badge">✓</span>
-                                Commerce vérifié
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Chat -->
-                <div class="wa-chat">
-                    <div class="wa-time">01:02</div>
-            
-                    <div class="msg ai-msg">
-                        <div class="msg-content">
-                            <div class="ai-badge">Djula</div>
-                            Bienvenue chez Sneakers CI ! 👟
-                            Comment puis-je vous aider ?
-                        </div>
-                        <span class="msg-time">✓✓</span>
-                    </div>
-            
-                    <div class="msg client-msg">
-                        <div class="msg-content">AF1 en 42 dispo ?</div>
-                        <span class="msg-time"></span>
-                    </div>
-            
-                    <div class="msg ai-msg product-msg">
-                        <div class="product-card">
-                            <img src="assets/images/airforce1.webp" alt="Nike AF1">
-                            <div class="product-details">
-                                <span class="product-price">35 000 FCFA</span>
-                                <button class="pay-btn">
-                                    Payer maintenant
-                                    <span class="btn-icon">→</span>
-                                </button>
-                            </div>
-                        </div>
-                        <span class="msg-time">✓✓</span>
+                    <div class="spots-badge">
+                        <span class="spots-content">
+                            🔥 Seulement 100 places disponibles
+                        </span>
                     </div>
                 </div>
             </div>
+    
+            <!-- Mockup WhatsApp -->
+            <div class="whatsapp-preview">
+                <div class="whatsapp-frame">
+                    <div class="wa-header">
+                        <div class="wa-header-content">
+                            <img src="assets/images/aicha-profile.webp" alt="Aïcha" class="wa-profile">
+                            <div class="wa-business-info">
+                                <div class="wa-name">Sneakers CI by Aïcha</div>
+                                <div class="wa-verified">
+                                    <span class="verified-badge">✓</span>
+                                    Commerce vérifié
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="wa-chat">
+                        <div class="wa-time">01:02</div>
+                
+                        <div class="msg ai-msg">
+                            <div class="msg-content">
+                                <div class="ai-badge">Djula</div>
+                                Bienvenue chez Sneakers CI ! 👟
+                                Comment puis-je vous aider ?
+                            </div>
+                            <span class="msg-time">✓✓</span>
+                        </div>
+                
+                        <div class="msg client-msg">
+                            <div class="msg-content">je veux acheter des baskets Nike Air Force 1 en taille 42.</div>
+                            <span class="msg-time"></span>
+                        </div>
+                        
+                        <div class="msg ai-msg">
+                            <div class="msg-content">
+                                <div class="ai-badge">Djula</div>
+                                Voici les modèles de Nike Air Force 1 disponibles 👇
+                            </div>
+                            <span class="msg-time">✓✓</span>
+                        </div>
 
-        </section>
+                        <div class="msg ai-msg product-msg">
+                            <div class="product-card">
+                                <img src="assets/images/airforce1.webp" alt="Nike AF1">
+                                <div class="product-details">
+                                    <span class="product-price">35 000 FCFA</span>
+                                    <button class="pay-btn">
+                                        Commander | Payer Maintenant
+                                        <span class="btn-icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <span class="msg-time">✓✓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <section class="py-32 px-6 bg-[#FAFAFA]">
             <div class="max-w-6xl mx-auto">
@@ -318,35 +351,242 @@
                     </a>
                 </div>
     
-                <!-- Right: Animated Illustration -->
-                <div class="solution-demo">
-                    <div class="demo-phone">
-                        <div class="demo-screen">
-                            <div class="demo-chat">
-                                <div class="chat-message client">
-                                    Je veux ces baskets 👟
+                <div class="mockups-showcase">
+                    <!-- Phone Mockup -->
+                    <div class="phone-device">
+                        <div class="phone-frame">
+                            <!-- Status Bar -->
+                            <div class="phone-status">
+                                <div class="notch"></div>
+                                <time class="status-time">13:36</time>
+                            </div>
+                
+                            <!-- Chat App -->
+                            <div class="app-interface">
+                                <!-- App Header -->
+                                <div class="app-header">
+                                    <div class="business-profile">
+                                        <div class="profile-image">
+                                            <img src="assets/images/aicha-profile.webp" alt="Sneakers CI">
+                                            <span class="online-dot"></span>
+                                        </div>
+                                        <div class="profile-info">
+                                            <h3>Sneakers CI by Aïcha</h3>
+                                            <div class="verification">
+                                                <svg viewBox="0 0 24 24" class="verify-icon">
+                                                    <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.7 14.3L6.7 12l1.4-1.4 2.2 2.2 5.6-5.6 1.4 1.4-7 7z"/>
+                                                </svg>
+                                                <span>Commerce vérifié</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="chat-message ai">
-                                    <div class="ai-badge">Djula</div>
-                                    Voici le lien de paiement sécurisé 🔒
-                                </div>
-                                <div class="payment-card">
-                                    <span class="payment-amount">35 000 FCFA</span>
-                                    <button class="pay-button">
-                                        Payer via Orange Money
-                                    </button>
-                                </div>
-                                <div class="success-animation">
-                                    <svg class="checkmark" viewBox="0 0 52 52">
-                                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-                                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                                    </svg>
-                                    <span>Payé !</span>
+                
+                                <!-- Chat Flow -->
+                                <div class="chat-flow">
+                                    <div class="message-bubble client">
+                                        AF1 en 42 disponible ?
+                                    </div>
+                
+                                    <div class="message-bubble ai">
+                                        <div class="ai-tag">Djula AI</div>
+                                        Parfait! Voici votre lien de paiement sécurisé 🔒
+                                    </div>
+                
+                                    <!-- Payment Card -->
+                                    <div class="payment-card">
+                                        <div class="payment-header">
+                                            <span class="payment-title">Nike AF1 '07</span>
+                                            <span class="payment-amount">35 000 FCFA</span>
+                                        </div>
+                                        <button class="pay-button">
+                                            <span>Payer maintenant</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                
+                                    <!-- Success Message -->
+                                    <div class="message-bubble success">
+                                        <svg class="check-icon" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10" fill="currentColor" fill-opacity="0.1"/>
+                                            <path stroke="currentColor" d="M8 12l3 3 5-5" fill="none" stroke-width="2"/>
+                                        </svg>
+                                        <span>Paiement confirmé !</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                
+                    <!-- Dashboard Tablet -->
+                    <div class="tablet-mockup">
+                        <!-- Tablet Frame -->
+                        <div class="tablet-frame">
+                            <!-- Top Bar -->
+                            <div class="tablet-bar">
+                                <div class="bar-controls">
+                                    <div class="control-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                    <div class="bar-title">
+                                        <span class="seller-name">Sneakers CI by Aïcha</span>
+                                        <span class="store-type">Commerce vérifié</span>
+                                    </div>
+                                </div>
+                                <div class="bar-actions">
+                                    <time class="current-time">14:15</time>
+                                    <button class="action-btn">
+                                        <svg width="20" height="20" fill="none" stroke="currentColor">
+                                            <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                    
+                            <!-- Dashboard Content -->
+                            <div class="dashboard-content">
+                                <!-- Welcome Section -->
+                                <header class="dash-header">
+                                    <div class="welcome-section">
+                                        <h1>Tableau de bord</h1>
+                                        <p class="date-display">13 Février 2025</p>
+                                    </div>
+                                </header>
+                    
+                                <!-- Stats Grid -->
+                                <div class="stats-grid">
+                                    <div class="stat-card primary">
+                                        <div class="stat-header">
+                                            <div class="stat-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M12 2v20M17 7l-5-5-5 5M2 13h20M7 17l5 5 5-5" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="stat-trend positive">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M18 15l-6-6-6 6" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                                +24%
+                                            </div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">245 000 FCFA</span>
+                                            <span class="stat-label">Ventes du jour</span>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="stat-card secondary">
+                                        <div class="stat-header">
+                                            <div class="stat-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M20 7l-8 8-4-4-6 6" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="stat-trend positive">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M18 15l-6-6-6 6" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                                +3
+                                            </div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">18</span>
+                                            <span class="stat-label">Commandes</span>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="stat-card tertiary">
+                                        <div class="stat-header">
+                                            <div class="stat-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <div class="stat-trend positive">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <path d="M18 15l-6-6-6 6" stroke-width="2" stroke-linecap="round"/>
+                                                </svg>
+                                                +12
+                                            </div>
+                                        </div>
+                                        <div class="stat-info">
+                                            <span class="stat-value">156</span>
+                                            <span class="stat-label">Clients actifs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Recent Orders -->
+                                <section class="orders-section">
+                                    <div class="section-header">
+                                        <h2>Commandes récentes</h2>
+                                        <button class="view-all">
+                                            Voir tout
+                                            <svg width="16" height="16" fill="none" stroke="currentColor">
+                                                <path d="M6 12l4-4-4-4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                    
+                                    <div class="orders-list">
+                                        <div class="order-card new">
+                                            <div class="order-content">
+                                                <div class="order-image">
+                                                    <img src="assets/images/airforce1.webp" alt="Nike AF1">
+                                                    <span class="order-status success"></span>
+                                                </div>
+                                                <div class="order-details">
+                                                    <h3>Nike AF1 '07</h3>
+                                                    <div class="order-meta">
+                                                        <span class="time">À l'instant</span>
+                                                        <span class="price">35 000 FCFA</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-actions">
+                                                <span class="status-badge success">Payé</span>
+                                                <button class="action-btn">
+                                                    <svg width="16" height="16" fill="none" stroke="currentColor">
+                                                        <path d="M4 8h8" stroke-width="2" stroke-linecap="round"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="order-card">
+                                            <div class="order-content">
+                                                <div class="order-image">
+                                                    <img src="assets/images/jordan4.webp" alt="Jordan 4">
+                                                    <span class="order-status pending"></span>
+                                                </div>
+                                                <div class="order-details">
+                                                    <h3>Air Jordan 4</h3>
+                                                    <div class="order-meta">
+                                                        <span class="time">Il y a 5 min</span>
+                                                        <span class="price">45 000 FCFA</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-actions">
+                                                <span class="status-badge pending">En attente</span>
+                                                <button class="action-btn">
+                                                    <svg width="16" height="16" fill="none" stroke="currentColor">
+                                                        <path d="M4 8h8" stroke-width="2" stroke-linecap="round"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </section>
